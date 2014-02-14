@@ -1,0 +1,247 @@
+@font-face {
+	font-family: "Moolboran";
+	src: url("fonts/moolbor_0.ttf");
+	}
+
+@font-face{
+	font-family: 'Allura';
+	src: url("fonts/Allura-Regular.otf");
+}
+
+@font-face {
+	font-family: "AftaSerifThin-Italic";
+	src: url("fonts/AftaSerifThin-Italic.otf");
+	}
+
+@font-face {
+	font-family: "AftaSerifThin-Regular";
+	src: url("fonts/AftaSerifThin-Regular.otf");
+	}
+
+/**{
+	border: 1px solid red;
+}*/
+
+/*====#  HEADER CLASSES #====*/
+
+.header{
+	height: 300px;
+	/*border: 1px solid red;*/
+}
+
+.log_cont{
+	background-color: rgba(255,255,255,0.6);
+}
+
+.banner_home{
+	background: url(../img/digitando-internet.jpg) no-repeat -2px -400px fixed;
+	background-size: 101%;
+	height: 100%;
+	display: block;
+	clear: both;
+	/*margin-top: 20px;*/
+}
+
+.banner_form{
+	background: url(../img/orcamento.jpg) no-repeat 0 -300px fixed;
+	background-size: 100%;
+}
+
+.logo{
+	width: 50%;
+	margin-top: 30px;
+	margin-left: 90px;
+	/* z-index: 99; */
+}
+
+.nav_line{
+	background-color: #061951;
+	/* z-index: -6; */
+	height: 50px;
+	border-bottom: 2px solid lightgray;
+}
+
+.top_nav ul{
+	padding-left: 0;
+	margin-top: 7px;
+}
+
+.top_nav li{
+	display: inline;
+}
+
+.top_nav li a{
+	text-decoration: none;
+	font-family: 'Moolboran';
+	font-size: 2.5em;
+	color: #fff;
+	font-weight: 100;
+	margin: 0;
+	margin-right: 75px;
+}
+
+.header h1{
+	font-family: 'Moolboran';
+	font-size: 5em;
+	color: #061951;
+	font-weight: 100;
+	letter-spacing: 0.045em;
+	border-top: 2px solid;
+	margin: 5px 15px 0 15px;
+	line-height: 1.25em;
+	/* background-color: rgba(255,255,255,0.5); */
+	text-align: center;
+}
+
+/*=====# MAIN BODY #=====*/
+
+.transcr h2, .trad h2{
+	/*border: 1px solid red;*/
+	font: 600 1.75em 'AftaSerifThin-Italic';
+	color: white;
+	text-align: right;
+	background: rgba(6,25,81,0.8);
+	padding-right: 10px;
+	position: absolute;
+	top: 40px;
+	width: 90%;
+	letter-spacing: 0.08em;
+	/*text-transform: uppercase;*/
+}
+
+.transcr, .trad, .form{
+	position: relative;
+	margin-top: 20px;
+	background-size: 100%;
+	/*padding: 35px 20px;*/
+	height: 215px;
+	border-radius: 15px;
+}
+
+.form{
+	border-color: #061951 white;
+	border-width: 5px 2px;
+	border-style: double solid;
+	/*margin-left: 20px;*/
+	margin-right: 0;
+	border-radius: 0;
+	/*border-radius: 20px;*/
+}
+
+.input_txt{
+	width: 100%;
+	border-radius: 5px;
+	line-height: 2em;
+	padding-left: 5px;
+	margin-bottom:5px;
+	margin-top: 5px;
+}
+
+.lbl{
+	font-weight: bold;
+}
+
+.btn{
+	margin-top: 5px;
+	float: right;
+	color: #CC0000;
+	font-size: 1.25em;
+	/*background-color: #FF9933;*/
+	/*background-color: #CC0000;*/
+	background-color: #e7aead;
+	border-radius: 5px;
+	border: 1px solid white;
+	padding: 10px;
+	font-family: 'Allura-Regular';
+}
+
+.form h2{
+	font: bolder 2em 'AftaSerifThin-Regular';
+	color: #061951;
+	text-align: center;
+	/*font-style: italic;*/
+	background: rgba(255,255,255,1);
+	margin: 0px;
+}
+
+.transcr{
+	background: url(../img/transcr.jpg) no-repeat 0 0;
+	background-size: 101%;
+}
+
+.trad{
+	background: url(../img/trad.jpg) no-repeat -18px -60px;
+	background-size: 120%;
+}
+
+.chkbx>label{
+	margin-right: 20px;
+}
+
+.chkbx{
+	margin: 5px 0;
+}
+
+.quote{
+	margin-top: 20px;
+	height: 140px;
+	position: relative;
+}
+
+/*.quote:before{
+	content: "\"";
+	font-size: 25em;
+	font-family: 'Allura';
+	position: absolute
+	top: -125px;
+	left: 0px;
+	color: lightgray;
+	z-index: -1;
+}*/
+
+.quote p{
+	font: 2.5em 'Allura';
+	text-align: right;
+	margin: 20px;
+	line-height: 0.75em;
+}
+
+.footer{
+	margin-top: 20px;
+	background-color: #061951;
+	color: white;	
+	height: 50px;
+	text-align: right;
+}
+
+/*=====# ORCAMENTO #=====*/
+
+.form_trad, .form_transcr , .form_submit, #input_outro{
+	display: none;
+}
+
+.form_transcr>div{
+	margin-bottom: 20px;
+}
+
+#total_minutos{
+	width: 50%;
+}
+
+.tipo_transcr>label{
+	display: block;
+}
+
+.tooltip{
+	text-decoration: none;
+	background-color: #061951;
+	color: #fff;
+	border-radius: 15px;
+	font-weight: bolder;
+	padding: 0px 2px;
+	margin-left: -20px;
+}
+
+#input_outro{
+
+}
