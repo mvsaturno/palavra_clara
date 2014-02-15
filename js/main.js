@@ -27,7 +27,7 @@ $(document).ready(function() {
 	$('#referencia').change(function(){
 		var opt = $('#referencia option:selected').text();
 
-		if (opt === 'Outro') {
+		if (opt === 'Outro' || opt === 'Indicação') {
 			$('#input_outro').fadeIn();
 			// $('#lbl_outro').fadeIn();
 		} else{
@@ -51,7 +51,7 @@ $(document).ready(function() {
 			$('.form_trad').fadeOut('slow');
 			// clear_form($('.form_trad'));
 			// $('.form_trad').each( function resetDate(){
-  	// 			this.value.reset(); = this.defaultValue;
+  			// this.value.reset(); = this.defaultValue;
 			// });
 			$('.form_transcr').fadeIn('slow');
 			$('.form_submit').fadeIn('slow');
@@ -70,10 +70,29 @@ $(document).ready(function() {
 			break;
 		}
 	});
+
+	$("#orcamento").submit(
+		function(event){
+			event.preventDefault();
+			var data = {};
+			$.each($("#orcamento").serializeArray(), function(k,v){ 
+				data[v.name] = v.value;
+			});
+			data = $("#orcamento").serializeArray();
+
+			var opts = {
+				type: 'POST',
+				url:'/app/ua/inserir',
+				dataType:'json',
+				data: data
+			}
+			console.log(opts);
+			$.ajax(opts);
+		});
 });
 
-function clear_form(elm){
-  elm.each( function resetDate(){
-  this.value = this.defaultValue;
-});
-}
+// function clear_form(elm){
+//   elm.each( function resetDate(){
+//   this.value = this.defaultValue;
+// });
+// }

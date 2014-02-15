@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -7,8 +9,8 @@
 <?php 
     if (!empty($_POST)) {
         if (!empty($_POST['nome']) || !empty($_POST['email'])) {
-            $nome = $_POST['nome'];
-            $email = $_POST['email'];
+            $_SESSION['nome'] = $_POST['nome'];
+            $_SESSION['email'] = $_POST['email'];
         }
     }
  ?>
@@ -23,16 +25,16 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="styles/simplegrid.css">
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/tipTip.css">
 
         <script src="js/modernizr.custom.26858.js"></script>
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/jquery.tipTip.minified.js"></script>
         <script src="js/main.js"></script>
 
-        <script type="text/javascript">
-        $(".tooltip").tipTip({maxWidth: "auto", edgeOffset: 10, activation: 'click'});
-        </script>
+        <!-- <script type="text/javascript">
+         $(".tooltip").tipTip({maxWidth: "auto", edgeOffset: 10, activation: 'click'});
+         </script> 
+        -->
         
     </head>
     <body>
@@ -66,9 +68,9 @@
                         <h2>Preencha as informações abaixo:</h2>
 
                             <label for="nome"> Nome Completo: </label>
-                            <input required type="text" id="nome" name="nome" class="input_txt" value="<?php echo $nome; ?>" />
+                            <input required type="text" id="nome" name="nome" class="input_txt" value="<?php echo $_SESSION['nome']; ?>" />
                             <label for="email">Email:</label>
-                            <input required type="email" id="email" name="email" class="input_txt" value="<?php echo $email; ?>" />
+                            <input required type="email" id="email" name="email" class="input_txt" value="<?php echo $_SESSION['email']; ?>" />
 
                             <label for="cidade">Cidade: </label>
                             <input required type="text" class="input_txt" value="" name="cidade" id="cidade" />
@@ -109,72 +111,57 @@
                                             <option value="transcricao">Transcrição</option>
                                             <option value="trad_transcr">Tradução e Transcrição</option>
                                         </select>
-                                    <!--
-                                        <input required type="radio" name="tipo" id="traducao" value="traducao">
-                                        <label for="traducao">Tradução</label>
-
-                                        <input type="radio" name="tipo" id="transcricao" value="transcricao">
-                                        <label for="transcricao">Transcrição</label>
-
-                                        <input type="radio" name="tipo" id="trad_transcricao" value="trad_transcricao">
-                                        <label for="trad_transcricao">Tradução + Transcrição</label>
-                                    -->
                                     </div>
                             </div>
                     </div>
                 </div>
                 <div class="col-1-2 form_more">
                     <div class="form_transcr">
-                        <h2>Transcrição:</h2>
-                        <div class="col-1-2">
-                        <label for="prazo">Prazo de Entrega: </label>
+                    <h2>Transcrição:</h2>
+                    <div class="col-1-1">
+                        <div>
+                        <label for="prazo_transcr">Prazo de Entrega: </label>
+                        <input type="date" class="input_txt" value="" name="prazo_transcr" id="prazo_transcr" />
                         </div>
-                        <div class="col-1-2">
-                        <input required type="date" value="" name="prazo" id="prazo" />
-                        </div>
-                        <div class="col-1-2">
+                        <div>
                             <label for="idioma">Idioma:</label>
-                        </div>
-                        <div class="col-1-2">
-                            <label class="usuario_label"> 
-                                <select required class="usuario_select" name="idioma" id="idioma">
+                                <select class="input_txt" name="idioma" id="idioma">
                                     <option value="pt">Português</option>
                                     <option value="en">Inglês</option>
                                     <option value="es">Espanhol</option>                    
                                 </select>
-                            </label>
                         </div>
-                        <div class="col-1-2"> 
-                            <label for="total_minutos">Tempo total dos arquivos de áudio:</label> 
-                        </div>
-                        <div class="col-1-3"> 
-                            <input required type="number" id="total_minutos" name="total_minutos" value="" /> <label>minutos</label> 
+                        <div> 
+                            <label for="total_minutos">Tempo total dos arquivos de áudio (em minutos):</label> 
+                            <input type="number" class="input_txt nbr" id="total_minutos" name="total_minutos" value="" />
                         </div>
 
-                        <div class="col-1-1 chkbx"> <label>Tipo de Transcrição:</label> 
-                            <a href="" class="tooltip" title="<u><b>Literal:</b></u> Respeita a fala coloquial e os vícios de linguagem originais do áudio. <br/><br/> <u><b>Linguagem Culta:</b></u> Com correção ortográfica, alterando a fala original.">?</a> </br>
-                                <input required type="radio" name="tipo_transcr" id="literal" value="literal">
-                                <label for="literal">Literal</label>
-                                <input type="radio" name="tipo_transcr" id="culta" value="culta">
-                                <label for="culta">Linguagem Culta</label>
+                        <div> 
+                            <label>Tipo de Transcrição:</label> 
+                            <div class="tooltip" title="<u><b>Literal:</b></u> Respeita a fala coloquial e os vícios de linguagem originais do áudio. <br/><br/> <u><b>Linguagem Culta:</b></u> Com correção ortográfica, alterando a fala original.">?</div>
+                            <select class="input_txt" name="tipo_transcr" id="tipo_transcr">
+                                <option value="literal">Literal</option>
+                                <option value="culta">Linguagem Culta</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="form_trad">
-                        <h2>Tradução:</h2>
-                        <div class="col-1-2">
-                        <label for="prazo">Prazo de Entrega: </label>
-                        </div>
-                        <div class="col-1-2">
-                        <input required type="date" value="" name="prazo" id="prazo" />
-                        </div>
-                    </div>
-                    <div class="form_submit">
-                            <input hidden="hidden" type="text" value="orcamento" />
-                            <input type="submit" value="Solicite Grátis!">
                     </div>
                 </div>
+                <div class="form_trad">
+                    <h2>Tradução:</h2>
+                    <div class="col-1-2">
+                    <label for="prazo_trad">Prazo de Entrega: </label>
+                    </div>
+                    <div class="col-1-2">
+                    <input type="date" value="" name="prazo_trad" id="prazo_trad" />
+                    </div>
+                </div>
+                <div class="form_submit">
+                    <input hidden="hidden" type="text" value="orcamento" />
+                    <input type="submit" value="Solicite Grátis!">
+                </div>
+            </div>
             </form>
-        </div>
+            </div>
         <div class="footer col-1-1">
             <div class="grid">
             <p>Palavra Clara | Porto Alegre - RS</p>

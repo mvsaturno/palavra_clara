@@ -8,13 +8,33 @@
 	src: url("fonts/Allura-Regular.otf");
 }
 
+@font-face{
+	font-family: 'Margot';
+	src: url("fonts/Margot Regular.ttf");
+}
+
+@font-face{
+	font-family: 'Margot It';
+	src: url("fonts/Margot Regular italic.ttf");
+}
+
+@font-face{
+	font-family: 'Margot Bold';
+	src: url("fonts/Margot Bold.ttf");
+}
+
+@font-face{
+	font-family: 'Margot Bold It';
+	src: url("fonts/Margot Bold italic.ttf");
+}
+
 @font-face {
 	font-family: "AftaSerifThin-Italic";
 	src: url("fonts/AftaSerifThin-Italic.otf");
 	}
 
 @font-face {
-	font-family: "AftaSerifThin-Regular";
+	font-family: "AftaSerifThin";
 	src: url("fonts/AftaSerifThin-Regular.otf");
 	}
 
@@ -97,7 +117,7 @@
 
 .transcr h2, .trad h2{
 	/*border: 1px solid red;*/
-	font: 600 1.75em 'AftaSerifThin-Italic';
+	font: 100 1.75em 'AftaSerifThin-Italic';
 	color: white;
 	text-align: right;
 	background: rgba(6,25,81,0.8);
@@ -135,6 +155,7 @@
 	padding-left: 5px;
 	margin-bottom:5px;
 	margin-top: 5px;
+	height: 35px;
 }
 
 .lbl{
@@ -220,12 +241,12 @@
 	display: none;
 }
 
-.form_transcr>div{
-	margin-bottom: 20px;
+.form_submit input{
+	float: right;
 }
 
-#total_minutos{
-	width: 50%;
+.form_transcr>div{
+	margin-bottom: 20px;
 }
 
 .tipo_transcr>label{
@@ -239,7 +260,12 @@
 	border-radius: 15px;
 	font-weight: bolder;
 	padding: 0px 2px;
-	margin-left: -20px;
+	display: inline;
+	/*margin-left: -20px;*/
+}
+
+.usuario_select{
+	width: 100%;
 }
 
 #input_outro{
