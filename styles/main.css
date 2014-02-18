@@ -45,16 +45,17 @@
 /*====#  HEADER CLASSES #====*/
 
 .header{
-	height: 300px;
+	/*height: 300px;*/
 	/*border: 1px solid red;*/
 }
 
 .log_cont{
 	background-color: rgba(255,255,255,0.6);
+	width: 100%;
 }
 
 .banner_home{
-	background: url(../img/digitando-internet.jpg) no-repeat -2px -400px fixed;
+	background: url(../img/digitando-internet.jpg) no-repeat 0 0;
 	background-size: 101%;
 	height: 100%;
 	display: block;
@@ -68,16 +69,18 @@
 }
 
 .logo{
-	width: 50%;
-	margin-top: 30px;
-	margin-left: 90px;
+	width: 33.33%;
+	margin-left: 33.33%;
+	/*margin-top: 30px;*/
+	/*margin-left: 90px;*/
 	/* z-index: 99; */
 }
 
 .nav_line{
-	background-color: #061951;
+	margin-top: 0;
+	/*background-color: #061951;*/
 	/* z-index: -6; */
-	height: 50px;
+	/*height: 50px;*/
 	border-bottom: 2px solid lightgray;
 }
 
@@ -87,7 +90,10 @@
 }
 
 .top_nav li{
-	display: inline;
+	/*display: list-item;*/
+	text-align: center;
+	margin-top: 5px;
+	background-color: #061951;
 }
 
 .top_nav li a{
@@ -97,12 +103,12 @@
 	color: #fff;
 	font-weight: 100;
 	margin: 0;
-	margin-right: 75px;
+	/*margin-right: 75px;*/
 }
 
 .header h1{
 	font-family: 'Moolboran';
-	font-size: 5em;
+	font-size: 3.5em;
 	color: #061951;
 	font-weight: 100;
 	letter-spacing: 0.045em;
@@ -268,6 +274,3 @@
 	width: 100%;
 }
 
-#input_outro{
-
-}

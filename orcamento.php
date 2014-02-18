@@ -22,20 +22,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/simplegrid.css">
+        <link rel="stylesheet" href="styles/norm_grid.min.css">
         <link rel="stylesheet" href="styles/main.css">
 
-        <script src="js/modernizr.custom.26858.js"></script>
         <script src="js/jquery-1.11.0.min.js"></script>
-        <script src="js/jquery.tipTip.minified.js"></script>
+        <script src="js/modernizr.custom.26858.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- <script type="text/javascript">
-         $(".tooltip").tipTip({maxWidth: "auto", edgeOffset: 10, activation: 'click'});
-         </script> 
-        -->
-        
     </head>
     <body>
         <div class="header">

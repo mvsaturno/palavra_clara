@@ -10,25 +10,24 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/simplegrid.css">
+        <link rel="stylesheet" href="styles/norm_grid.min.css">
         <link rel="stylesheet" href="styles/main.css">
 
-        <script src="js/modernizr.custom.26858.js"></script>
         <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/modernizr.custom.26858.js"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
         <div class="header">
             <div class="banner_home">
                 <div class="grid">
-                <div class="col-1-3 push-right log_cont">
+                <div class="log_cont">
                     <img src="img/logo_transp.png" class="logo">
                     <h1>Palavra Clara</h1>
                 </div>
                 </div>
             </div>
-                <div class="col-1-1 nav_line">
+                <div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
                 <ul>
@@ -75,4 +74,4 @@
             </div>
         </div>
     </body>
-</hmtl>
+</html>
