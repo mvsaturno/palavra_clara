@@ -34,20 +34,20 @@
         <div class="header">
             <div class="banner_form">
                 <div class="grid">
-                    <div class="col-1-3 push-right log_cont">
-                        <img src="img/logo_transp.png" class="logo">
-                        <h1>Palavra Clara</h1>
-                    </div>
+                <div class="log_cont">
+                    <img src="img/logo_transp.png" class="logo">
+                    <h1>Palavra Clara</h1>
+                </div>
                 </div>
             </div>
-                <div class="col-1-1 nav_line">
+                <div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Referências</a></li>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <a href="index.php"><li>Home</li></a>
+                    <a href="referencias.php"><li>Referências</li></a>
+                    <a href="quemsomos.php"><li>Quem Somos</li></a>
+                    <a href="contato.php"><li>Contato</li></a>
                 </ul>
                 </div>
                 </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="grid main_cont">
             <!-- <div class="col-1-3"> </div> -->
-            <form id="orcamento" action="completo.php" method="POST">
+            <form id="orcamento_comp" action="completo.php" method="POST">
                 <div class="col-1-2">
                     <div class="orcamento">
                         <h2>Preencha as informações abaixo:</h2>
@@ -83,38 +83,34 @@
                                 <input class="input_txt" type="text" id="input_outro_bx" name="input_outro_bx" value="" />
                             </div>
 
-                            <div class="col-1-1">
-                                    <div class="chkbx">
-                                        <label>Razão Social:</label></br>
-                                        <input required type="radio" name="social" id="pf" value="pf">
-                                        <label for="pf">Pessoa Física</label>
+                            
+                            <div class="chkbx">
+                                <label>Razão Social:</label></br>
+                                <input required type="radio" name="social" id="pf" value="pf">
+                                <label for="pf">Pessoa Física</label>
 
-                                        <input type="radio" name="social" id="pj" value="pj">
-                                        <label for="pj">Pessoa Jurídica</label>
-                                    </div>
+                                <input type="radio" name="social" id="pj" value="pj">
+                                <label for="pj">Pessoa Jurídica</label>
                             </div>
+                            
+                            <div class="chkbx" id="servico">
+                                <label>Serviço Desejado:</label>
 
-                            <div class="col-1-1">
-                                    <div class="chkbx" id="servico">
-                                        <label>Serviço Desejado:</label>
-
-                                        <select required name="tipo" class="input_txt" id="tipo">
-                                            <option value="null">Selecione uma opção:</option>
-                                            <option value="traducao">Tradução</option>
-                                            <option value="transcricao">Transcrição</option>
-                                            <option value="trad_transcr">Tradução e Transcrição</option>
-                                        </select>
-                                    </div>
-                            </div>
+                                <select required name="tipo" class="input_txt" id="tipo">
+                                    <option value="null">Selecione uma opção:</option>
+                                    <option value="traducao">Tradução</option>
+                                    <option value="transcricao">Transcrição</option>
+                                    <option value="trad_transcr">Tradução e Transcrição</option>
+                                </select>
+                            </div>                            
                     </div>
                 </div>
                 <div class="col-1-2 form_more">
                     <div class="form_transcr">
                     <h2>Transcrição:</h2>
-                    <div class="col-1-1">
                         <div>
-                        <label for="prazo_transcr">Prazo de Entrega: </label>
-                        <input type="date" class="input_txt" value="" name="prazo_transcr" id="prazo_transcr" />
+                            <label for="prazo_transcr">Prazo de Entrega: </label>
+                            <input type="date" class="input_txt" value="" name="prazo_transcr" id="prazo_transcr" />
                         </div>
                         <div>
                             <label for="idioma">Idioma:</label>
@@ -128,29 +124,36 @@
                             <label for="total_minutos">Tempo total dos arquivos de áudio (em minutos):</label> 
                             <input type="number" class="input_txt nbr" id="total_minutos" name="total_minutos" value="" />
                         </div>
-
                         <div> 
-                            <label>Tipo de Transcrição:</label> 
-                            <div class="tooltip" title="<u><b>Literal:</b></u> Respeita a fala coloquial e os vícios de linguagem originais do áudio. <br/><br/> <u><b>Linguagem Culta:</b></u> Com correção ortográfica, alterando a fala original.">?</div>
+                            <label>Tipo de Transcrição:</label> <br/>
+                            <!-- <div class="tooltip" title="<u><b>Literal:</b></u> Respeita a fala coloquial e os vícios de linguagem originais do áudio. <br/><br/> <u><b>Linguagem Culta:</b></u> Com correção ortográfica, alterando a fala original.">?</div> -->
+
+                            <a href="#" class="tooltip">
+                                <!-- Saiba Mais -->
+                                Qual escolher?
+                                <!-- O que é isto? -->
+                                <span>
+                                    Literal:<br/>
+                                    <i>Respeita a fala coloquial e os vícios de linguagem originais do áudio.</i><br /><br/>
+                                    Linguagem Culta:<br/>
+                                    <i>Com correção ortográfica, alterando a fala original.</i>
+                                </span>
+                            </a>
+
                             <select class="input_txt" name="tipo_transcr" id="tipo_transcr">
                                 <option value="literal">Literal</option>
                                 <option value="culta">Linguagem Culta</option>
                             </select>
                         </div>
-                    </div>
                 </div>
                 <div class="form_trad">
                     <h2>Tradução:</h2>
-                    <div class="col-1-2">
                     <label for="prazo_trad">Prazo de Entrega: </label>
-                    </div>
-                    <div class="col-1-2">
-                    <input type="date" value="" name="prazo_trad" id="prazo_trad" />
-                    </div>
+                    <input type="date" class="input_txt" value="" name="prazo_trad" id="prazo_trad" />
                 </div>
                 <div class="form_submit">
                     <input hidden="hidden" type="text" value="orcamento" />
-                    <input type="submit" value="Solicite Grátis!">
+                    <input type="submit" class="btn" value="Solicite Grátis!">
                 </div>
             </div>
             </form>
