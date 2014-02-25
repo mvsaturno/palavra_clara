@@ -45,8 +45,8 @@
                 <div class="form">
                     <h2>Orçamento:</h2>
                     <form id="orcamento" action="orcamento.php" method="POST">
-                        <input type="text" id="nome" name="nome" class="input_txt" value="Nome Completo" />
-                        <input type="email" id="email" name="email" class="input_txt" value="E-Mail" />
+                        <input type="text" id="nome" name="nome" class="input_txt" placeholder="Nome Completo" value="" />
+                        <input type="email" id="email" name="email" class="input_txt" placeholder="E-mail" value="" />
                             <div class="btn_orc">
                                 <input type="submit" class="btn" value="Solicite Grátis!" />
                             </div>

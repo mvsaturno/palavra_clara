@@ -1,29 +1,5 @@
 $(document).ready(function() {
 
-	$('#nome').focus(function(){
-		if ($('#nome').val() === 'Nome Completo' ) {
-		$('#nome').val('');
-		}
-	});
-
-	$('#nome').blur( function(){
-		if ($('#nome').val() === '' ) {
-		$('#nome').val('Nome Completo');
-		}
-	});
-
-	$('#email').focus(function(){		
-		if ($('#email').val() === 'E-Mail' ) {
-		$('#email').val('');
-		}
-	});
-
-	$('#email').blur( function(){
-		if ($('#email').val() === '' ) {
-		$('#email').val('E-Mail');
-		}
-	});
-
 	$('#referencia').change(function(){
 		var opt = $('#referencia option:selected').text();
 
@@ -117,18 +93,40 @@ $(document).ready(function() {
         setInterval("switchDiv()", 5000 );
 });
 
-// function clear_form(elm){
-//   elm.each( function resetDate(){
-//   this.value = this.defaultValue;
-// });
-// }
-
 function scrollToAnchor(aid){
     var aTag = $("."+ aid );
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
 
 
-var PalavraClara = (function(){
-	
-})();
+var PalavraClara = {
+	referencia : $('#referencia'),
+	tipo : $('#tipo'),
+	orcamento : $("#orcamento_comp"),
+	tooltip : $('.tooltip'),
+
+	init : function(){
+
+	},
+
+	/*
+	$('.tooltip').on('click', function($this){
+		$this.preventDefault();
+		console.log('preveniu!');
+	});
+	*/	
+
+	observeReferencia : function(){
+		referencia.change(function(){
+		var opt = $('#referencia option:selected').text();
+
+		if (opt === 'Outro' || opt === 'Indicação') {
+			$('#input_outro').fadeIn();
+		} else{
+			$('#input_outro').fadeOut();
+			$('#input_outro_bx').val('');
+		};
+	});		
+	}
+
+};
