@@ -1,41 +1,66 @@
 $(document).ready(function() {
+/*
 
-	$('#referencia').change(function(){
+	//Função que faz os depoimentos sumirem e aparecem:
+	$('.depoimento').hide();
+        var count = $('.depoimento').length;
+        console.log(count);
+        var currentItem = 0;
+        switchDiv = function() {
+            if (currentItem == count - 1) {   
+                $('.depoimento').eq(count - 1).hide();
+                currentItem = 0;
+                $('.depoimento').eq(0).fadeIn();
+            }
+            else {        
+                $('.depoimento').eq(currentItem).hide();
+                currentItem = currentItem + 1;
+                $('.depoimento').eq(currentItem).fadeIn();
+            }        
+        }
+        setInterval("switchDiv()", 5000 );*/
+        PalavraClara.init();
+});
+
+var PalavraClara = {
+
+	observeReferencia : function(e){		
+		e.change(function(){
 		var opt = $('#referencia option:selected').text();
 
 		if (opt === 'Outro' || opt === 'Indicação') {
-			$('#input_outro').fadeIn();
-			// $('#lbl_outro').fadeIn();
+			$('#ref_outro').fadeIn();
 		} else{
-			$('#input_outro').fadeOut();
-			// $('#lbl_outro').fadeOut();
-			$('#input_outro_bx').val('');
+			$('#ref_outro').fadeOut();
+			$('#ref_outro_bx').val('');
 		};
-	});
+	});		
+	},
 
-	$('#tipo').change(function(){
-		var opt = $('#tipo').val();
+	observeTipo : function(e){
+		e.change(function(){
+		var opt = e.val();
 
 		switch(opt){
 			case 'traducao':
 			$('.form_transcr').hide();
 			$('.form_trad').fadeIn('slow');
 			$('.form_submit').fadeIn('slow');
-			scrollToAnchor('form_trad');
+			this.scrollToAnchor('form_trad');
 			break;
 
 			case 'transcricao':
 			$('.form_trad').hide();
 			$('.form_transcr').fadeIn('slow');
 			$('.form_submit').fadeIn('slow');
-			scrollToAnchor('form_transcr');
+			this.scrollToAnchor('form_transcr');
 			break;
 			
 			case 'trad_transcr':
 			$('.form_trad').fadeIn();
 			$('.form_transcr').fadeIn();
 			$('.form_submit').fadeIn();
-			scrollToAnchor('form_transcr');
+			this.scrollToAnchor('form_transcr');
 			break;
 
 			default:
@@ -44,9 +69,17 @@ $(document).ready(function() {
 			$('.form_submit').hide();
 			break;
 		}
-	});
+	}.bind(this));
+	},
 
-	$("#orcamento_comp").submit(
+	observeTooltip : function(e){
+		e.on('click', function($this){
+		$this.preventDefault();
+	});
+	},
+
+	observeForm : function(e){
+		e.submit(
 		function(event){
 			event.preventDefault();
 			var data = {};
@@ -64,69 +97,23 @@ $(document).ready(function() {
 			console.log(opts);
 			$.ajax(opts);
 		});
-
-	$('.tooltip').on('click', function($this){
-		$this.preventDefault();
-		console.log('preveniu!');
-	});
-
-	$('.depoimento').hide();
-
-        var count = $('.depoimento').length;
-        console.log(count);
-
-        var currentItem = 0;
-
-        switchDiv = function() {
-            if (currentItem == count - 1) {   
-                $('.depoimento').eq(count - 1).hide();
-                currentItem = 0;
-                $('.depoimento').eq(0).fadeIn();
-            }
-            else {        
-                $('.depoimento').eq(currentItem).hide();
-                currentItem = currentItem + 1;
-                $('.depoimento').eq(currentItem).fadeIn();
-            }        
-        }
-
-        setInterval("switchDiv()", 5000 );
-});
-
-function scrollToAnchor(aid){
-    var aTag = $("."+ aid );
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-}
-
-
-var PalavraClara = {
-	referencia : $('#referencia'),
-	tipo : $('#tipo'),
-	orcamento : $("#orcamento_comp"),
-	tooltip : $('.tooltip'),
-
-	init : function(){
-
 	},
 
-	/*
-	$('.tooltip').on('click', function($this){
-		$this.preventDefault();
-		console.log('preveniu!');
-	});
-	*/	
+ 	scrollToAnchor: function(aid){
+    	var aTag = $("."+ aid );
+    	$('html,body').animate({scrollTop: aTag.offset().top},'slow');
+	},
 
-	observeReferencia : function(){
-		referencia.change(function(){
-		var opt = $('#referencia option:selected').text();
+	init: function(){
 
-		if (opt === 'Outro' || opt === 'Indicação') {
-			$('#input_outro').fadeIn();
-		} else{
-			$('#input_outro').fadeOut();
-			$('#input_outro_bx').val('');
-		};
-	});		
+		referencia = $('#referencia');
+		tipo = $('#tipo_serv');
+		tooltip = $('.tooltip');
+		form = $("#orcamento_comp");
+
+		this.observeReferencia(referencia);
+		this.observeTipo(tipo);
+		this.observeTooltip(tooltip);
+		this.observeForm(form);
 	}
-
 };

@@ -55,35 +55,40 @@
         </div>
         <div class="grid main_cont">
             <!-- <div class="col-1-3"> </div> -->
-            <form id="orcamento_comp" action="completo.php" method="POST">
+            <form id="orcamento_comp" action="completo.php" class="form_orcamento" method="POST">
                 <div class="col-1-2">
                     <div class="orcamento">
                         <h2>Preencha as informações abaixo:</h2>
-
-                            <label for="nome"> Nome Completo: </label>
-                            <input required type="text" id="nome" name="nome" class="input_txt" value="<?php echo $_SESSION['nome']; ?>" />
-                            <label for="email">Email:</label>
-                            <input required type="email" id="email" name="email" class="input_txt" value="<?php echo $_SESSION['email']; ?>" />
-
-                            <label for="cidade">Cidade: </label>
-                            <input required type="text" class="input_txt" value="" name="cidade" id="cidade" />
-
-                            <label for="pais">País: </label>
-                            <input required type="text" class="input_txt" value="" name="pais" id="pais" />
-
-                            <label for="referencia">Como conheceu o Palavra Clara? </label>
-                            <select class="input_txt" required name="referencia" id="referencia">
-                                <option value="facebook">Facebook (Fan Page)</option>
-                                <option value="indicacao">Indicação</option>
-                                <option value="google">Pesquisa no Google</option>
-                                <option>Outro</option>
-                            </select>
-                            <div id="input_outro">
-                                <label for="input_outro_bx">Especifique:</label>
-                                <input class="input_txt" type="text" id="input_outro_bx" name="input_outro_bx" value="" />
+                            <div>
+                                <label for="nome"> Nome Completo: </label>
+                                <input required type="text" id="nome" name="nome" class="input_txt" value="<?php if (!empty($_SESSION['nome'])) { echo $_SESSION['nome'];} ?>" />
+                            </div>
+                            <div>
+                                <label for="email">Email:</label>
+                                <input required type="email" id="email" name="email" class="input_txt" value="<?php if (!empty($_SESSION['email'])){echo $_SESSION['email'];} ?>" />
+                            </div>
+                            <div>
+                                <label for="cidade">Cidade: </label>
+                                <input required type="text" class="input_txt" value="" name="cidade" id="cidade" />
+                            </div>
+                            <div>
+                                <label for="pais">País: </label>
+                                <input required type="text" class="input_txt" value="" name="pais" id="pais" />
+                            </div>
+                            <div>
+                                <label for="referencia">Como conheceu o Palavra Clara? </label>
+                                <select class="input_txt" required name="referencia" id="referencia">
+                                    <option value="facebook">Facebook (Fan Page)</option>
+                                    <option value="indicacao">Indicação</option>
+                                    <option value="google">Pesquisa no Google</option>
+                                    <option>Outro</option>
+                                </select>
+                            </div>
+                            <div id="ref_outro">
+                                <label for="ref_outro_bx">Especifique:</label>
+                                <input class="input_txt" type="text" id="ref_outro_bx" name="ref_outro_bx" value="" />
                             </div>
 
-                            
                             <div class="chkbx">
                                 <label>Razão Social:</label></br>
                                 <input required type="radio" name="social" id="pf" value="pf">
@@ -95,8 +100,7 @@
                             
                             <div class="chkbx" id="servico">
                                 <label>Serviço Desejado:</label>
-
-                                <select required name="tipo" class="input_txt" id="tipo">
+                                <select required name="tipo_serv" class="input_txt" id="tipo_serv">
                                     <option value="null">Selecione uma opção:</option>
                                     <option value="traducao">Tradução</option>
                                     <option value="transcricao">Transcrição</option>
@@ -106,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col-1-2 form_more">
-                    <div class="form_transcr">
+                    <div class="form_transcr orcamento">
                     <h2>Transcrição:</h2>
                         <div>
                             <label for="prazo_transcr">Prazo de Entrega: </label>
@@ -125,13 +129,9 @@
                             <input type="number" class="input_txt nbr" id="total_minutos" name="total_minutos" value="" />
                         </div>
                         <div> 
-                            <label>Tipo de Transcrição:</label> <br/>
-                            <!-- <div class="tooltip" title="<u><b>Literal:</b></u> Respeita a fala coloquial e os vícios de linguagem originais do áudio. <br/><br/> <u><b>Linguagem Culta:</b></u> Com correção ortográfica, alterando a fala original.">?</div> -->
-
+                            <label>Tipo de Transcrição:</label>
                             <a href="#" class="tooltip">
-                                <!-- Saiba Mais -->
                                 Qual escolher?
-                                <!-- O que é isto? -->
                                 <span>
                                     Literal:<br/>
                                     <i>Respeita a fala coloquial e os vícios de linguagem originais do áudio.</i><br /><br/>
@@ -146,10 +146,43 @@
                             </select>
                         </div>
                 </div>
-                <div class="form_trad">
+                <div class="form_trad orcamento">
                     <h2>Tradução:</h2>
-                    <label for="prazo_trad">Prazo de Entrega: </label>
-                    <input type="date" class="input_txt" value="" name="prazo_trad" id="prazo_trad" />
+                    <div>
+                        <label for="prazo_trad">Prazo de Entrega: </label>
+                        <input type="date" class="input_txt" value="" name="prazo_trad" id="prazo_trad" />
+                    </div>
+                    <div>
+                        <label for="tipo_txt">Tipo do material:</label>
+                                <select class="input_txt" name="tipo_txt" id="tipo_txt">
+                                    <option value="art_cient">Artigo Científico</option>
+                                    <option value="art_jorn">Artigo Jornalístico</option>
+                                    <option value="site">Site</option>
+                                    <option value="txt_tecnico">Texto Técnico (manual, normas técnicas, relatórios)</option>
+                                    <option value="video">Video</option>
+                                    <option value="audio">Arquivo de áudio</option>
+                                    <option>Outro</option>
+                                </select>
+                    </div>
+                    <div id="tipo_txt_outro">
+                            <label for="tipo_txt_outro_bx">Especifique o tipo (ex: Romance, eBook) ou extensão do arquivo (ex: PDF, DOC):</label>
+                            <input class="input_txt" type="text" id="tipo_txt_outro_bx" name="tipo_txt_outro_bx" value="" />
+                    </div>
+                    <div>
+                        <label for="num_paginas">Numero de páginas:</label> 
+                        <input type="number" class="input_txt nbr" id="num_paginas" name="num_paginas" value="" />
+                    </div>
+                    <div>
+                        <label for="num_palavras">Numero aproximado de palavras (opcional):</label> 
+                        <input type="number" class="input_txt nbr" id="num_palavras" name="num_palavras" value="" />
+                    </div>
+                    <div>
+                        <label for="possui_fotos">Seu texto possui fotos ou imagens?</label>
+                        <select class="input_txt" name="possui_fotos" id="possui_fotos">
+                                <option value="sim">Sim</option>
+                                <option value="nao">Não</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form_submit">
                     <input hidden="hidden" type="text" value="orcamento" />
