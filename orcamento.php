@@ -75,13 +75,13 @@
                                 <label for="pais">País: </label>
                                 <input required type="text" class="input_txt" value="" name="pais" id="pais" />
                             </div>
-                            <div>
+                            <div id="ref_form">
                                 <label for="referencia">Como conheceu o Palavra Clara? </label>
                                 <select class="input_txt" required name="referencia" id="referencia">
                                     <option value="facebook">Facebook (Fan Page)</option>
                                     <option value="indicacao">Indicação</option>
                                     <option value="google">Pesquisa no Google</option>
-                                    <option>Outro</option>
+                                    <option value="outro_ref">Outro</option>
                                 </select>
                             </div>
                             <div id="ref_outro">
@@ -90,12 +90,11 @@
                             </div>
 
                             <div class="chkbx">
-                                <label>Razão Social:</label></br>
-                                <input required type="radio" name="social" id="pf" value="pf">
-                                <label for="pf">Pessoa Física</label>
-
-                                <input type="radio" name="social" id="pj" value="pj">
-                                <label for="pj">Pessoa Jurídica</label>
+                                <label>Razão Social:</label>
+                                <select name="social" class="input_txt" id="social" >
+                                    <option value="pf">Pessoa Física</option>
+                                    <option value="pj">Pessoa Jurídica</option>
+                                </select>
                             </div>
                             
                             <div class="chkbx" id="servico">
@@ -116,7 +115,7 @@
                             <label for="prazo_transcr">Prazo de Entrega: </label>
                             <input type="date" class="input_txt" value="" name="prazo_transcr" id="prazo_transcr" />
                         </div>
-                        <div>
+                        <div id="idioma_transcr">
                             <label for="idioma">Idioma:</label>
                                 <select class="input_txt" name="idioma" id="idioma">
                                     <option value="pt">Português</option>
@@ -152,7 +151,7 @@
                         <label for="prazo_trad">Prazo de Entrega: </label>
                         <input type="date" class="input_txt" value="" name="prazo_trad" id="prazo_trad" />
                     </div>
-                    <div>
+                    <div id="trad_tipo_material">
                         <label for="tipo_txt">Tipo do material:</label>
                                 <select class="input_txt" name="tipo_txt" id="tipo_txt">
                                     <option value="art_cient">Artigo Científico</option>
@@ -161,7 +160,7 @@
                                     <option value="txt_tecnico">Texto Técnico (manual, normas técnicas, relatórios)</option>
                                     <option value="video">Video</option>
                                     <option value="audio">Arquivo de áudio</option>
-                                    <option>Outro</option>
+                                    <option value="outro_trad">Outro</option>
                                 </select>
                     </div>
                     <div id="tipo_txt_outro">
@@ -179,8 +178,8 @@
                     <div>
                         <label for="possui_fotos">Seu texto possui fotos ou imagens?</label>
                         <select class="input_txt" name="possui_fotos" id="possui_fotos">
-                                <option value="sim">Sim</option>
                                 <option value="nao">Não</option>
+                                <option value="sim">Sim</option>
                         </select>
                     </div>
                 </div>

@@ -24,19 +24,6 @@ $(document).ready(function() {
 
 var PalavraClara = {
 
-	observeReferencia : function(e){		
-		e.change(function(){
-		var opt = $('#referencia option:selected').text();
-
-		if (opt === 'Outro' || opt === 'Indicação') {
-			$('#ref_outro').fadeIn();
-		} else{
-			$('#ref_outro').fadeOut();
-			$('#ref_outro_bx').val('');
-		};
-	});		
-	},
-
 	observeTipo : function(e){
 		e.change(function(){
 		var opt = e.val();
@@ -104,14 +91,37 @@ var PalavraClara = {
     	$('html,body').animate({scrollTop: aTag.offset().top},'slow');
 	},
 
+	//Criar função que monitora o click nos selects options e vê se o valor 
+	//escolhido é 'outro' pra exibir o campo de "especifique" na respectiva sessão
+
+	monitoreFormSelects : function(){
+		$('#orcamento_comp').find('select').on('change', function(){
+			
+			var val = $(this).val();
+			if (val === 'indicacao' || val === 'outro_ref') {
+				$('#ref_outro').fadeIn();
+			} else if (val === 'facebook' || val === 'google') {
+				$('#ref_outro').fadeOut();
+				$('#ref_outro_bx').val('');
+			} else if (val === 'outro_trad') {
+				$('#tipo_txt_outro').fadeIn();
+			} else if ($(this).parent().attr('id') === 'trad_tipo_material') {
+				$('#tipo_txt_outro').fadeOut();
+				$('#tipo_txt_outro').find('input').val('');
+			}
+
+		});
+	},
+
 	init: function(){
 
-		referencia = $('#referencia');
+		//referencia = $('#referencia');
 		tipo = $('#tipo_serv');
 		tooltip = $('.tooltip');
 		form = $("#orcamento_comp");
 
-		this.observeReferencia(referencia);
+		this.monitoreFormSelects();
+		//this.observeReferencia(referencia);
 		this.observeTipo(tipo);
 		this.observeTooltip(tooltip);
 		this.observeForm(form);
