@@ -41,15 +41,20 @@
             </div>
         </div>
         <div class="grid main_cont">
-            <div class="col-1-1">
+            <h1>Selecione a instituição para ler o depoimento:</h1>
+            <div class="col-1-3">
+                <div class="instituicao ppgs"></div>
 
-                <div class="depoimento">
+                <div class="instituicao spaf"></div>
+            </div>
+            <div class="col-2-3">
+                <div class="depoimento" id="ppgs">
                     <p class="main">Tive o prazer de trabalhar com Clareana durante a realização de minha pesquisa de campo no mestrado. As transcrições foram realizadas dentro dos prazos estabelecidos e de maneira respeitosa com a fala dos interlocutores. O resultado foi excelente, principalmente porque haviam gravações importantes com ruídos do ambiente, esse empecilho exigiu dedicação ainda maior de Clareana, que superou todas expectativas e me entregou um trabalho de ótima qualidade.</p>
                     <p class="autor">Danielle Wille</p>
                     <p class="autor_descr">Mestranda em Ciências Sociais – UFPEL</p>
                 </div>
 
-                <div class="depoimento">
+                <div class="depoimento" id="spaf">
                     <p class="main">Palavra Clara foi essencial no desenvolvimento da minha tese de doutorado. Trata-se de profissional dedicada, pontual e comprometida. Recomendo seu trabalho para todos que primam pela qualidade.</p>
                     <p class="autor">Jaqueline Sgarbi</p>
                     <p class="autor_descr">Doutoranda pelo Programa de Pós-graduação em Sistemas de Produção Agrícola Familiar-SPAF</p>

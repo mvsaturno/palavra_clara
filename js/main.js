@@ -72,6 +72,9 @@ var PalavraClara = {
 			var data = {};
 			$.each($("#orcamento_comp").serializeArray(), function(k,v){ 
 				data[v.name] = v.value;
+				console.log('v.value = ' + v.value);
+				console.log('k.value = ' + k.value);
+				console.log('k = '+ k);
 			});
 			data = $("#orcamento_comp").serializeArray();
 
@@ -115,13 +118,11 @@ var PalavraClara = {
 
 	init: function(){
 
-		//referencia = $('#referencia');
 		tipo = $('#tipo_serv');
 		tooltip = $('.tooltip');
 		form = $("#orcamento_comp");
 
 		this.monitoreFormSelects();
-		//this.observeReferencia(referencia);
 		this.observeTipo(tipo);
 		this.observeTooltip(tooltip);
 		this.observeForm(form);

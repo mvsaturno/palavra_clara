@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid main_cont">
+        <div class="grid form_cont">
             <!-- <div class="col-1-3"> </div> -->
             <form id="orcamento_comp" action="completo.php" class="form_orcamento" method="POST">
                 <div class="col-1-2">
@@ -185,7 +185,7 @@
                 </div>
                 <div class="form_submit">
                     <input hidden="hidden" type="text" value="orcamento" />
-                    <input type="submit" class="btn" value="Solicite Grátis!">
+                    <input type="submit" class="btn btn_form" value="Solicite Grátis!">
                 </div>
             </div>
             </form>

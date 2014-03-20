@@ -57,7 +57,34 @@
 	border: 1px solid red;
 }*/
 
+
 /*====#  HEADER CLASSES #====*/
+
+.top_nav ul{
+	display: none;
+}
+
+.menu_mobile_div{
+		width: 90%;
+		margin-left: 5%;
+		border: 2px solid white;
+		overflow: hidden;
+		border-radius: 15px;
+		background: url(../img/menu.png) no-repeat 98% 8px #fff;
+		margin-top: 20px;
+		margin-bottom: 20px;
+}
+
+.menu_mobile{
+	width: 107%;
+	height: 50px;
+	font-size: 1.5em;
+	color: #000;
+	cursor: pointer;
+	padding: 10px;
+	border: none;
+	background-color: transparent;
+}
 
 .header{
 	/*height: 300px;*/
@@ -67,6 +94,10 @@
 .log_cont{
 	background-color: rgba(255,255,255,0.6);
 	width: 100%;
+}
+
+.banner_grid{
+	/*background-color: rgba(255,255,255,0.6);*/
 }
 
 .banner_home{
@@ -114,14 +145,13 @@
 	/*border-bottom: 2px solid lightgray;*/
 }
 
-.top_nav ul{
+/*.top_nav ul{
 	padding-left: 0;
 	margin-bottom: 10px;
 	list-style-type: none;
 }
 
 .top_nav li{
-	/*display: list-item;*/
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 0;
@@ -131,12 +161,11 @@
 	border-radius: 25px;
 	width: 90%;
 	margin-left: 5%;
-	box-shadow: 0 0 5px 1px #fff;
 }
 
 .top_nav ul:first-child{
 	margin-top: 0;
-}
+}*/
 .top_nav a{
 	text-decoration: none;
 	font-family: 'quicksandbook';
@@ -144,7 +173,6 @@
 	color: #fff;
 	font-weight: 100;
 	margin: 0;
-	/*margin-right: 75px;*/
 }
 
 .header h1{
@@ -156,20 +184,14 @@
 	border-top: 2px solid;
 	margin: 5px 15px 0 15px;
 	line-height: 1.25em;
-	/* background-color: rgba(255,255,255,0.5); */
 	text-align: center;
 }
 
 /*=====# MAIN BODY #=====*/
 
 .transcr_title, .trad_title{
-	color: white;
-	text-align: right;
-	background: rgba(6,25,81,0.8);
-	padding-right: 10px;
-	position: absolute;
-	top: 40px;
-	width: 90%;
+	color: rgba(6,25,81,1);
+	text-align: center;
 	line-height: 0.5em;
 	letter-spacing: 0.08em;
 }
@@ -179,22 +201,30 @@
 	margin: 0;
 }
 
-.transcr, .trad, .form{
-	position: relative;
-	margin-top: 20px;
-	background-size: 100%;
-	height: 215px;
-	border-radius: 15px;
+.trad_title h2{
+	padding-right: 20px;
+}
+
+.tr_div{
+	padding-right: 20px!important;
 }
 
 .transcr, .trad{
-	box-shadow: 0px 1px 6px 2px #000;
+	padding: 0 25px;
+}
+
+.transcr img, .trad img{
+	width: 80%;
+	height: 80%;
+	border: 2px solid black;
+	border-radius: 50%;
+	margin-left: 10%;
 }
 
 .form{
 	border-color: #061951 white;
-	border-width: 5px 2px;
-	border-style: double solid;
+	border-width: 2px;
+	border-style: dashed;
 	margin-right: 0;
 	border-radius: 0;
 }
@@ -203,13 +233,18 @@
 	margin-right: 20px;
 }
 
+.orcamento{
+	padding: 0;
+	margin-top: 30px;
+}
+
 .input_txt{
 	width: 100%;
 	border-radius: 5px;
 	line-height: 2em;
 	padding-left: 5px;
-	margin-bottom:5px;
-	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	height: 35px;
 }
 
@@ -222,7 +257,7 @@
 }
 
 .btn{
-	margin-top: 20px;
+	margin-top: 9px;
 	margin-bottom: 20px;
 	/*float: right;*/
 	width: 100%;
@@ -241,6 +276,10 @@
 	padding: 10px;
 	box-shadow:  0px 2px 5px 0px #000;
 	font-family: 'chiqregular_italic';
+}
+
+.btn_form{
+	margin-top: 20px;
 }
 
 .form h2{
@@ -296,15 +335,15 @@ a.tooltip span
     box-shadow: 5px 5px 8px #CCC;
 }
 
-.transcr{
-	background: url(../img/transcr.jpg) no-repeat center;
-	background-size: 131%;
+/*.transcr{
+	background: url(../img/transcr_transp.png) no-repeat center;
+	background-size: 100%;
 }
 
 .trad{
-	background: url(../img/trad.jpg) no-repeat center;
-	background-size: 130%;
-}
+	background: url(../img/globo_transp1.png) no-repeat center;
+	background-size: 100%;
+}*/
 
 .chkbx>label{
 	margin-right: 20px;
@@ -357,7 +396,7 @@ a.tooltip span
 }
 
 .orcamento>div{
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
 .tipo_transcr>label{
@@ -368,11 +407,78 @@ a.tooltip span
 	width: 100%;
 }
 
+/*=====# ORCAMENTO #=====*/
+.instituicao{
+	height: 150px;
+	width: 50%;
+	margin-left: 25%;
+	margin-bottom: 9.2%;
+}
+
+.spaf{
+	background: url(../img/ufpel.gif) center no-repeat;
+	background-size: 82%;
+}
+
+.ppgs{
+	background: url(../img/ppgs_ufpel1.png) center no-repeat;
+}
 
 /*MEDIA QUERIES*/
 
+/*Larger Smartphones and Phablets  ---------- */
+
+@media only screen and (min-width : 500px) and (max-width : 767px) {
+
+	.transcr img, .trad img{
+		width: 50%;
+		height: 50%;
+		margin-left: 25%;
+	}	
+
+}
+
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+
+	.log_cont{
+		width: 33.3%;
+		margin-left: 66.6%;
+	}
+
+	.log_cont h1{
+		font-size: 3.2em;
+	}
+
+	.logo{
+		width: 60%;
+		margin-left: 20%;
+	}
+
+	.main_cont{
+		margin-top: 5%;
+	}
+
+	.transcr img, .trad img{
+		width: 90%;
+		height: 90%;
+		margin-left: 5%;
+	}
+
+	.orcamento{
+		margin-top: 0;
+		padding-left: 15px;
+		padding-right: 0px;
+	}
+
+	.tr_div{
+		padding-right: 0!important;
+	}
+
+	.quote p{
+		font-size: 2.5em;
+	}
+
 	.form_more{
 		margin-right: 0px;
 	}
@@ -381,34 +487,111 @@ a.tooltip span
 
 	}
 
-}
-
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-	.form_more{
-		margin-right: 0px;
+	.top_nav ul{
+	padding-left: 0;
+	margin-bottom: 10px;
+	list-style-type: none;
+	display: block;
+	margin-top: 10px;
+	margin-left: 20px;
 	}
-}
 
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-	.form_more{
-		margin-right: 0px;
+	.top_nav li.act, .top_nav li:hover{
+		color: #D44040;
 	}
-}
 
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
-	.form_more{
-		margin-right: 0px;
+	.menu_mobile_div{
+		display: none;
+	}
+
+	.menu_mobile{
+		display: none;
+	}
+
+	.nav_line{
+		/*box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.6);*/
+		height: 47px;
+	}
+
+	.top_nav{
+		width: 100%;
+		/*float: right;*/
 	}
 
 	.top_nav li{
-		display: inline-table;
-		margin-left: 3%;
-		width: 21%;
+		display: inline;
+		margin-left: 0;
+		margin-right: 35px;
 		border: none;
 		box-shadow: none;
+		height: 0;
+		margin-top: 5px;
+		background-color: transparent;
+		border-radius: 0;
+	}
+
+	.top_nav a{
+		font-size: 1.8em;
+	}
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1024px) {
+
+	.form_more{
+		margin-right: 0px;
+	}
+
+	.top_nav ul{
+	display: block;
+	padding-left: 0;
+	margin-bottom: 10px;
+	list-style-type: none;
+	margin-top: 10px;
+	margin-left: 20px;
+	}
+
+	.top_nav li.act, .top_nav li:hover{
+		color: #D44040;
+	}
+
+	.menu_mobile_div{
+		display: none;
+	}
+
+	.menu_mobile{
+		display: none;
+	}
+
+	.nav_line{
+		/*box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.6);*/
+		height: 47px;
+	}
+
+	.top_nav{
+		width: 100%;
+		/*float: right;*/
+	}
+
+	.top_nav li{
+		display: inline;
+		margin-left: 0;
+		margin-right: 35px;
+		border: none;
+		box-shadow: none;
+		height: 0;
+		margin-top: 5px;
+		background-color: transparent;
+		border-radius: 0;
+	}
+
+	.top_nav a{
+		font-size: 1.8em;
+	}
+
+	.orcamento{
+		padding-right: 20px;
 	}
 
 	.logo{
@@ -422,7 +605,7 @@ a.tooltip span
 	}
 
 	.banner_home{
-	background: url(../img/digitando-internet.jpg) no-repeat 0 -400px;
+	background: url(../img/digitando-internet.jpg) no-repeat -2px -400px;
 	background-size: 101%;
 	height: 100%;
 	display: block;
@@ -434,4 +617,37 @@ a.tooltip span
 		margin: 5px 15px -20px 15px;
 		line-height: 1.25em;
 	}
+
+	.form_cont{
+		margin-top: 0;
+	}
+
+	.main_cont{
+		margin-top: 3.6%;
+	}
+
+	.quote{
+		margin-top: 2%;
+	}
+
+	.top_nav li{
+		background-color: none;
+		border-radius: none;
+	}
+
+	.quote p{
+		margin: 0.755%;
+		font-size: 2.9em;
+		text-align: right;
+		line-height: 1.3em;
+	}
+
+	.tr_div{
+		padding-right: 20px!important;
+	}
+
+	.clr_pad{
+		padding-right: 0;
+	}
+
 }
