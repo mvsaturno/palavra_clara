@@ -548,7 +548,7 @@ a.tooltip span
 	padding-left: 0;
 	margin-bottom: 10px;
 	list-style-type: none;
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-left: 20px;
 	}
 
@@ -587,7 +587,7 @@ a.tooltip span
 	}
 
 	.top_nav a{
-		font-size: 1.8em;
+		font-size: 2em;
 	}
 
 	.orcamento{

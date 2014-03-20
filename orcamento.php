@@ -43,6 +43,15 @@
                 <div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
+                    <div class="menu_mobile_div">
+                    <select class="menu_mobile" name="menu_mobile" onchange="location = this.options[this.selectedIndex].value;">
+                        <option value="">MENU</option>
+                        <option value="index.php"> <a href="index.php">Home</a></option>
+                        <option value="referencias.php"> <a href="referencias.php">Referencias</a></option>
+                        <option value="quemsomos.php"> <a href="quemsomos.php">Quem Somos</a></option>
+                        <option value="contato.php"> <a href="contato.php">Contato</a></option>
+                    </select>
+                    </div>
                 <ul>
                     <a href="index.php"><li>Home</li></a>
                     <a href="referencias.php"><li>Referências</li></a>
