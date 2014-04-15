@@ -72,17 +72,25 @@ var PalavraClara = {
 			var data = {};
 			$.each($("#orcamento_comp").serializeArray(), function(k,v){ 
 				data[v.name] = v.value;
+				console.log('v.name = ' + v.name);
 				console.log('v.value = ' + v.value);
-				console.log('k.value = ' + k.value);
 				console.log('k = '+ k);
 			});
 			data = $("#orcamento_comp").serializeArray();
 
 			var opts = {
 				type: 'POST',
-				url:'./',
+				url:'completo.php',
 				dataType:'json',
-				data: data
+				data: data,
+				success: function(data){
+					console.log("SUCESSO!");
+					console.log(data);
+				},
+				error:  function(data){
+					console.log("falhou!");
+					console.log(data);
+				}
 			}
 			console.log(opts);
 			$.ajax(opts);

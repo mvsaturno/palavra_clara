@@ -202,7 +202,7 @@
 }
 
 .trad_title h2{
-	padding-right: 20px;
+	/*padding-right: 20px;*/
 }
 
 .tr_div{
@@ -214,11 +214,11 @@
 }
 
 .transcr img, .trad img{
-	width: 80%;
-	height: 80%;
-	border: 2px solid black;
+	width: 60%;
+	/*height: 60%;*/
+	border: 7px double #061951;
 	border-radius: 50%;
-	margin-left: 10%;
+	margin-left: 20%;
 }
 
 .form{
@@ -235,7 +235,7 @@
 
 .orcamento{
 	padding: 0;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
 
 .input_txt{
@@ -407,12 +407,25 @@ a.tooltip span
 	width: 100%;
 }
 
-/*=====# ORCAMENTO #=====*/
+/*=====# Referencias #=====*/
 .instituicao{
 	height: 150px;
 	width: 50%;
 	margin-left: 25%;
 	margin-bottom: 9.2%;
+}
+
+.instituicao:after{
+	content: "";
+	position: relative;
+	display: block;
+	background-color: rgba(255,255,255,0.5);
+	width: 100%;
+	height: 100%;
+}
+
+.instituicao:hover:after{
+	background-color: rgba(255,255,255,0);
 }
 
 .spaf{
@@ -422,6 +435,10 @@ a.tooltip span
 
 .ppgs{
 	background: url(../img/ppgs_ufpel1.png) center no-repeat;
+}
+
+.depoimento{
+	/*display: none;*/
 }
 
 /*MEDIA QUERIES*/
@@ -548,7 +565,7 @@ a.tooltip span
 	padding-left: 0;
 	margin-bottom: 10px;
 	list-style-type: none;
-	margin-top: 5px;
+	margin-top: 10px;
 	margin-left: 20px;
 	}
 
@@ -587,7 +604,7 @@ a.tooltip span
 	}
 
 	.top_nav a{
-		font-size: 2em;
+		font-size: 1.8em;
 	}
 
 	.orcamento{

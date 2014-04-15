@@ -12,22 +12,14 @@
 
         <link rel="stylesheet" href="styles/norm_grid.min.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="./img/logo.png" >
 
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/modernizr.custom.26858.js"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
-        <div class="header">
-            <div class="banner_ref">
-                <div class="grid">
-                <div class="log_cont">
-                    <img src="img/logo_transp.png" class="logo">
-                    <h1>Palavra Clara</h1>
-                </div>
-                </div>
-            </div>
-                <div class="nav_line">
+        <div class="header"><div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
                     <div class="menu_mobile_div">
@@ -48,21 +40,34 @@
                 </div>
                 </div>
             </div>
+            <div class="banner_ref">
+                <div class="grid">
+                <div class="log_cont">
+                    <img src="img/logo_transp.png" class="logo">
+                    <h1>Palavra Clara</h1>
+                </div>
+                </div>
+            </div>
         </div>
         <div class="grid main_cont">
             <h1>Selecione a instituição para ler o depoimento:</h1>
             <div class="col-1-3">
                 <div class="instituicao ppgs"></div>
-
-                <div class="instituicao spaf"></div>
             </div>
+
             <div class="col-2-3">
                 <div class="depoimento" id="ppgs">
                     <p class="main">Tive o prazer de trabalhar com Clareana durante a realização de minha pesquisa de campo no mestrado. As transcrições foram realizadas dentro dos prazos estabelecidos e de maneira respeitosa com a fala dos interlocutores. O resultado foi excelente, principalmente porque haviam gravações importantes com ruídos do ambiente, esse empecilho exigiu dedicação ainda maior de Clareana, que superou todas expectativas e me entregou um trabalho de ótima qualidade.</p>
                     <p class="autor">Danielle Wille</p>
                     <p class="autor_descr">Mestranda em Ciências Sociais – UFPEL</p>
                 </div>
+            </div>
 
+            <div class="col-1-3">
+                <div class="instituicao spaf"></div>
+            </div>
+            
+            <div class="col-2-3">
                 <div class="depoimento" id="spaf">
                     <p class="main">Palavra Clara foi essencial no desenvolvimento da minha tese de doutorado. Trata-se de profissional dedicada, pontual e comprometida. Recomendo seu trabalho para todos que primam pela qualidade.</p>
                     <p class="autor">Jaqueline Sgarbi</p>

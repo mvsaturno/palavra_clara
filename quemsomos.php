@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="styles/norm_grid.min.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="./img/logo.png" >
 
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/modernizr.custom.26858.js"></script>
@@ -19,15 +20,7 @@
     </head>
     <body>
         <div class="header">
-            <div class="banner_quem">
-                <div class="grid">
-                <div class="log_cont">
-                    <img src="img/logo_transp.png" class="logo">
-                    <h1>Palavra Clara</h1>
-                </div>
-                </div>
-            </div>
-                <div class="nav_line">
+            <div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
                     <div class="menu_mobile_div">
@@ -45,6 +38,14 @@
                     <a href="quemsomos.php"><li class="act">Quem Somos</li></a>
                     <a href="contato.php"><li>Contato</li></a>
                 </ul>
+                </div>
+                </div>
+            </div>
+            <div class="banner_quem">
+                <div class="grid">
+                <div class="log_cont">
+                    <img src="img/logo_transp.png" class="logo">
+                    <h1>Palavra Clara</h1>
                 </div>
                 </div>
             </div>

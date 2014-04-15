@@ -24,6 +24,7 @@
 
         <link rel="stylesheet" href="styles/norm_grid.min.css">
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="./img/logo.png" >
 
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/modernizr.custom.26858.js"></script>
@@ -43,15 +44,6 @@
                 <div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
-                    <div class="menu_mobile_div">
-                    <select class="menu_mobile" name="menu_mobile" onchange="location = this.options[this.selectedIndex].value;">
-                        <option value="">MENU</option>
-                        <option value="index.php"> <a href="index.php">Home</a></option>
-                        <option value="referencias.php"> <a href="referencias.php">Referencias</a></option>
-                        <option value="quemsomos.php"> <a href="quemsomos.php">Quem Somos</a></option>
-                        <option value="contato.php"> <a href="contato.php">Contato</a></option>
-                    </select>
-                    </div>
                 <ul>
                     <a href="index.php"><li>Home</li></a>
                     <a href="referencias.php"><li>Referências</li></a>
@@ -63,7 +55,6 @@
             </div>
         </div>
         <div class="grid form_cont">
-            <!-- <div class="col-1-3"> </div> -->
             <form id="orcamento_comp" action="completo.php" class="form_orcamento" method="POST">
                 <div class="col-1-2">
                     <div class="orcamento">
@@ -87,7 +78,7 @@
                             <div id="ref_form">
                                 <label for="referencia">Como conheceu o Palavra Clara? </label>
                                 <select class="input_txt" required name="referencia" id="referencia">
-                                    <option value="facebook">Facebook (Fan Page)</option>
+                                    <option value="facebook">Facebook (Fanpage)</option>
                                     <option value="indicacao">Indicação</option>
                                     <option value="google">Pesquisa no Google</option>
                                     <option value="outro_ref">Outro</option>

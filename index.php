@@ -20,14 +20,6 @@
     </head>
     <body>
         <div class="header">
-                <div class="banner_home">
-                <div class="grid banner_grid">
-                <div class="log_cont">
-                    <img src="img/logo_transp.png" class="logo">
-                    <h1>Palavra Clara</h1>
-                </div>
-                </div>
-            </div>
             <div class="nav_line">
                 <div class="grid">
                 <div class="top_nav">
@@ -46,6 +38,14 @@
                     <a href="quemsomos.php"><li>Quem Somos</li></a>
                     <a href="contato.php"><li>Contato</li></a>
                 </ul>
+                </div>
+                </div>
+            </div>
+                <div class="banner_home">
+                <div class="grid banner_grid">
+                <div class="log_cont">
+                    <img src="img/logo_transp.png" class="logo">
+                    <h1>Palavra Clara</h1>
                 </div>
                 </div>
             </div>
